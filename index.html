@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Cupons Premium</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif}
+
+body{
+  background:radial-gradient(circle at top,#0f172a,#020617);
+  color:#fff;
+  min-height:100vh;
+}
+
+/* ===== TÍTULO ===== */
+.title{
+  text-align:center;
+  margin:40px 20px 10px;
+  font-size:32px;
+}
+.title span{color:#22c55e}
+
+/* ===== GRID 2 COLUNAS (FORÇADO) ===== */
+.cards-grid{
+  display:grid;
+  grid-template-columns:repeat(2, 200px);
+  justify-content:center;
+  gap:28px;
+  margin:40px auto 100px;
+}
+
+/* ===== CARD ===== */
+.card_box{
+  width:200px;
+  height:320px;
+  border-radius:20px;
+  background:linear-gradient(170deg,rgba(58,56,56,.6),#0b0b0b);
+  position:relative;
+  box-shadow:0 25px 50px rgba(0,0,0,.6);
+  cursor:pointer;
+  transition:.35s;
+}
+.card_box:hover{transform:translateY(-10px) scale(1.03)}
+
+.card_box span{
+  position:absolute;
+  overflow:hidden;
+  width:150px;
+  height:150px;
+  top:-10px;
+  left:-10px;
+}
+
+.card_box span::before{
+  content:'Premium';
+  position:absolute;
+  width:150%;
+  height:40px;
+  background:linear-gradient(45deg,#ff7a18,#ffb347);
+  transform:rotate(-45deg) translateY(-20px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  font-weight:700;
+  letter-spacing:.1em;
+  box-shadow:0 5px 10px rgba(0,0,0,.3);
+}
+
+/* ===== CONTEÚDO ===== */
+.card-content{
+  height:100%;
+  padding:50px 14px 16px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+  text-align:center;
+}
+
+.card-content img{
+  max-width:90px;
+  max-height:45px;
+  object-fit:contain;
+}
+
+.card-content h3{font-size:15px}
+.desc{font-size:12px;color:#9ca3af}
+
+.price small{
+  text-decoration:line-through;
+  font-size:12px;
+  color:#6b7280;
+}
+.price strong{
+  display:block;
+  font-size:18px;
+  color:#22c55e;
+}
+
+button{
+  width:100%;
+  padding:10px;
+  border:none;
+  border-radius:12px;
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  color:#000;
+  font-weight:700;
+  cursor:pointer;
+}
+
+/* ===== NOTIFICAÇÃO ===== */
+.notify{
+  position:fixed;
+  left:20px;
+  bottom:20px;
+  background:#020617;
+  border-radius:14px;
+  padding:12px 16px;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  box-shadow:0 10px 30px rgba(0,0,0,.6);
+  animation:slideIn .5s ease;
+  z-index:999;
+}
+
+.notify img{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  object-fit:cover;
+}
+
+.notify strong{font-size:13px}
+.notify span{font-size:12px;color:#9ca3af}
+
+@keyframes slideIn{
+  from{transform:translateX(-120%);opacity:0}
+  to{transform:translateX(0);opacity:1}
+}
+</style>
+</head>
+
+<body>
+
+<h1 class="title">
+  Os melhores cupons <br>
+  <span>mais baratos de hoje</span>
+</h1>
+
+<div class="cards-grid">
+
+<div class="card_box"><span></span>
+<div class="card-content">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png">
+<h3>Netflix</h3>
+<p class="desc">Plano Premium 12 meses</p>
+<p class="price"><small>R$59,90</small><strong>R$14,90</strong></p>
+<button>Comprar</button>
+</div></div>
+
+<div class="card_box"><span></span>
+<div class="card-content">
+<img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png">
+<h3>Uber</h3>
+<p class="desc">Gift Card R$100</p>
+<p class="price"><small>R$59,90</small><strong>R$14,90</strong></p>
+<button>Comprar</button>
+</div></div>
+
+<div class="card_box"><span></span>
+<div class="card-content">
+<img src="img/99food.png">
+<h3>99Food</h3>
+<p class="desc">Cupom R$100</p>
+<p class="price"><small>R$29,90</small><strong>R$14,90</strong></p>
+<button>Comprar</button>
+</div></div>
+
+<div class="card_box"><span></span>
+<div class="card-content">
+<img src="img/mc.png">
+<h3>McDonald’s</h3>
+<p class="desc">4 McOfertas</p>
+<p class="price"><small>R$59,90</small><strong>R$14,90</strong></p>
+<button>Comprar</button>
+</div></div>
+
+<div class="card_box"><span></span>
+<div class="card-content">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg">
+<h3>Amazon</h3>
+<p class="desc">R$89 + Frete Grátis</p>
+<p class="price"><small>R$49,90</small><strong>R$14,90</strong></p>
+<button>Comprar</button>
+</div></div>
+
+<div class="card_box"><span></span>
+<div class="card-content">
+<img src="img/gamepass.jpg">
+<h3>Xbox Game Pass</h3>
+<p class="desc">Plano Premium</p>
+<p class="price"><small>R$115,90</small><strong>R$14,90</strong></p>
+<button>Comprar</button>
+</div></div>
+
+</div>
+
+<script>
+/* ===== NOTIFICAÇÕES ===== */
+const buyers=[
+ {n:"Mariana",i:23,r:"São Paulo",f:"https://randomuser.me/api/portraits/women/65.jpg"},
+ {n:"Lucas",i:31,r:"Guarulhos",f:"https://randomuser.me/api/portraits/men/44.jpg"},
+ {n:"Ana",i:27,r:"Santo André",f:"https://randomuser.me/api/portraits/women/52.jpg"},
+ {n:"Rafael",i:35,r:"Osasco",f:"https://randomuser.me/api/portraits/men/29.jpg"},
+ {n:"Beatriz",i:22,r:"Diadema",f:"https://randomuser.me/api/portraits/women/41.jpg"},
+ {n:"Carlos",i:40,r:"São Bernardo",f:"https://randomuser.me/api/portraits/men/53.jpg"},
+ {n:"Juliana",i:28,r:"Mauá",f:"https://randomuser.me/api/portraits/women/33.jpg"},
+ {n:"Pedro",i:34,r:"Barueri",f:"https://randomuser.me/api/portraits/men/61.jpg"},
+ {n:"Camila",i:26,r:"Cotia",f:"https://randomuser.me/api/portraits/women/19.jpg"},
+ {n:"Bruno",i:38,r:"Itaquaquecetuba",f:"https://randomuser.me/api/portraits/men/12.jpg"}
+];
+
+let idx=0;
+function showNotify(){
+  const b=buyers[idx%buyers.length];
+  idx++;
+  const div=document.createElement("div");
+  div.className="notify";
+  div.innerHTML=`
+    <img src="${b.f}">
+    <div>
+      <strong>${b.n}, ${b.i} anos</strong><br>
+      <span>${b.r} acabou de comprar</span>
+    </div>`;
+  document.body.appendChild(div);
+  setTimeout(()=>div.remove(),2800);
+}
+setInterval(showNotify,3000);
+
+/* ===== REDIRECIONAMENTO PERFECTPAY ===== */
+const checkoutURL = "https://checkout.perfectpay.com.br/pay/PPU38CQ69RC";
+
+document.querySelectorAll(".card_box, .card_box button").forEach(el=>{
+  el.addEventListener("click",()=> {
+    window.location.href = checkoutURL;
+  });
+});
+</script>
+
+</body>
+</html>
